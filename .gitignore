@@ -5,3 +5,7 @@ build/
 .env.*
 .DS_Store
 *.log
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
