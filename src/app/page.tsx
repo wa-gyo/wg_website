@@ -17,16 +17,16 @@ export default function Home() {
             <span className="eyebrow">Aizu-Wakamatsu, Fukushima</span>
             <h1>海のない城下町で、<br /><em>海の味</em>を受け継ぐ。</h1>
             <p>
-              山に囲まれた会津には、干物や塩蔵品として運ばれた海の幸を、
+              山に囲まれた会津には、遠くの海から運ばれた乾物と、自ら育てた鯉を、
               手間ひまかけて味わう文化が根づいています。
-              私たちは鮮魚の卸として、そしてその文化の担い手として、伝統の味を次の世代の食卓へつなぎます。
+              若松魚類は会津若松の市場の水産卸として、その味を次の世代の食卓へつなぎます。
             </p>
             <div className="btns">
               <Link href="/stories/" className="btn">伝統食の物語を読む</Link>
               <Link href="/market/" className="btn solid">今日の入荷を見る</Link>
             </div>
           </div>
-          <p className="vertical">鰊の山椒漬け　棒鱈煮　こづゆ</p>
+          <p className="vertical">運ぶ知恵と、育てる知恵。</p>
         </div>
       </section>
 
@@ -43,7 +43,7 @@ export default function Home() {
               <span className="num">01</span>
               <span className="latin muted">Stories</span>
               <h3>伝統食の物語</h3>
-              <p>なぜ内陸の会津で、にしんや棒たらが愛されてきたのか。料理の背景にある、土地と人の記憶を辿ります。</p>
+              <p>海から運んだ乾物の料理と、山国で育てた鯉の料理。こづゆ、棒たら煮、鯉の甘煮、にしんの山椒漬けの背景を辿る連載です。</p>
               <span className="more">Read more</span>
             </Link>
             <Link href="/evolve/">
@@ -68,7 +68,7 @@ export default function Home() {
           </div>
           <MarketList items={market} />
           <div className="btns">
-            <a href={site.links.line} className="btn" target="_blank" rel="noopener">LINEで取り置き・予約 ↗</a>
+            <a href={site.links.line} className="btn" target="_blank" rel="noopener">飲食店・グループ買いのご予約（LINE） ↗</a>
           </div>
         </div>
       </section>
@@ -101,7 +101,7 @@ export default function Home() {
           </div>
           <div>
             <p className="muted" style={{ marginTop: 0 }}>
-              にしん、棒たら、干し貝柱。会津の伝統食材を使った新しい食べ方を募集します。
+              にしん、棒たら、干し貝柱、鯉。会津の伝統食材を使った新しい食べ方を募集します。
               学生・料理人・家庭料理、どなたでも。優秀作品は商品化や店舗でのメニュー化を目指します。
             </p>
             <div className="btns"><Link href="/challenge/" className="btn">募集要項を見る</Link></div>

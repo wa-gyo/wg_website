@@ -17,7 +17,10 @@ export function Cards({ items, base }: { items: Entry[]; base: string }) {
       {items.map((e) => (
         <Link key={e.slug} href={`${base}/${e.slug}/`} className="card">
           <Thumb e={e} />
-          <span className="meta">{e.tags.map((t) => <span key={t} className="tag">{t}</span>)}</span>
+          <span className="meta">
+            {e.data.series !== undefined && <span className="tag">第{String(e.data.series)}回</span>}
+            {e.tags.map((t) => <span key={t} className="tag">{t}</span>)}
+          </span>
           <h3>{e.title}</h3>
           <p>{e.excerpt}</p>
         </Link>

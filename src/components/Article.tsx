@@ -13,7 +13,7 @@ export function Article({ entry, section }: { entry: Entry; section: string }) {
     <>
       <section className="page-head">
         <div className="wrap">
-          <span className="eyebrow">{section}</span>
+          <span className="eyebrow">{section}{entry.data.series !== undefined && ` — No.${String(entry.data.series)}`}</span>
           <h1>{entry.title}</h1>
           {entry.excerpt && <p>{entry.excerpt}</p>}
         </div>

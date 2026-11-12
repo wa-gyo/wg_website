@@ -24,9 +24,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <header className="header">
           <div className="wrap">
-            <Link href="/" className="logo">
-              <b>{site.name}</b>
-              <small>{site.nameEn}</small>
+            <Link href="/" className="logo" aria-label={`${site.name} トップページ`}>
+              <img src="/images/logo.png" alt={site.name} width={147} height={34} />
             </Link>
             <nav className="nav">
               {nav.map((n) => (
@@ -48,8 +47,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="wrap">
             <div className="cols">
               <div>
-                <p style={{ fontFamily: "var(--serif)", fontSize: 18, color: "#fff", margin: 0 }}>{site.name}</p>
-                <p>{site.address}<br />TEL {site.tel}（{site.hours}）</p>
+                <span className="flogo"><img src="/images/logo.png" alt={site.name} width={130} height={30} /></span>
+                <p>
+                  {site.name}<br />
+                  {site.postal && <>〒{site.postal} </>}{site.address}<br />
+                  TEL {site.tel}　FAX {site.fax}<br />
+                  {site.email}
+                </p>
               </div>
               <ul>
                 {nav.map((n) => (<li key={n.href}><Link href={n.href}>{n.label}</Link></li>))}

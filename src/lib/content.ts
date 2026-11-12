@@ -51,7 +51,12 @@ export function getAll(collection: Collection): Entry[] {
     .filter((f) => f.endsWith(".md") && !f.startsWith("_"))
     .map((f) => read(collection, f))
     .filter((e) => e.data.draft !== true)
-    .sort((a, b) => (a.date < b.date ? 1 : -1));
+    .sort((a, b) => {
+      // series（連載番号）があれば番号順、なければ新しい順
+      const sa = a.data.series as number | undefined, sb = b.data.series as number | undefined;
+      if (sa !== undefined && sb !== undefined) return sa - sb;
+      return a.date < b.date ? 1 : -1;
+    });
 }
 
 export function getOne(collection: Collection, slug: string): Entry | undefined {

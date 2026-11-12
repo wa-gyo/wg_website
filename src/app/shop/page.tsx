@@ -8,6 +8,7 @@ export const metadata: Metadata = { title: "お取り寄せ" };
 
 export default function Page() {
   const products = getAll("products");
+  const stories = getAll("stories").map((s) => s.slug);
   return (
     <>
       <PageHead en="Shop" title="お取り寄せ" lead="物語とともに味わってほしい、会津の伝統の味と、新しい味。ご購入はオンラインストアから。" />
@@ -21,9 +22,9 @@ export default function Page() {
                 <h3>{p.title}</h3>
                 <p>{p.excerpt}</p>
                 <div style={{ display: "flex", gap: 16, marginTop: 8, fontSize: 13 }}>
-                  <a className="more" href={String(p.data.shop_url ?? site.links.shop)} target="_blank" rel="noopener">Buy ↗</a>
-                  {p.related.map((r) => (
-                    <Link key={r} className="more" href={getAll("stories").some((s) => s.slug === r) ? `/stories/${r}/` : `/evolve/${r}/`}>Story</Link>
+                  <a className="more" href={String(p.data.shop_url || site.links.shop)} target="_blank" rel="noopener">Buy ↗</a>
+                  {p.related.filter((r) => stories.includes(r)).slice(0, 1).map((r) => (
+                    <Link key={r} className="more" href={`/stories/${r}/`}>Story</Link>
                   ))}
                 </div>
               </div>
